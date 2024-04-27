@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.navbarimg{
+    width: 80px; /* Genişlik */
+    height: auto; 
+}
+.nav-link{
+    font-family: sans-serif;
+    color: black;
+    
+}
+
+.nav-link:hover {
+    background-color: #f8f9fa;
+    color: #0cf095;
+}
+
+.navbar-brand{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+.navbar-brand:hover{
+
+    background-color: #f8f9fa;
+    color: #4c01fb;
+}
+
+
+
+.btn-primary{
+    background-color: chocolate;
+}
+
+.logoboyutu{
+
+    width: 10em;
+}
+
+
+
+.container-fluid.background-image{
+    height: 600px;
+    background-image: url('/images/ofisçalışanı.png');
+    background-size: cover; /* Resmin konteyner boyutlarına sığması için */
+    background-position: center; /* Resmi ortalamak için */
+    background-repeat: no-repeat; /* Resmin tekrarlanmaması için */
+}
+
+.overlay {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Siyah renkte ve %50 opaklıkta overlay */
+    z-index: 1; /* Arka plan resminin üstünde olmalı */
+}
+
+.fs-1, /* resmin içindeki yazının de resmin üstüne çıkmasını ve kopyalanabilir olmasını sağladık aslında gerek yoktu ama :) */
+.btn-outline-warning {
+    position: relative; /* Butonun mutlak pozisyonunun konteynerin içine göre belirlenmesi */
+    z-index: 2; /* Overlay'in üstünde olacak şekilde butona yüksek bir z-index değeri verilmesi */
+}
+
+.bg-white {
+    background: linear-gradient(146deg, rgba(34,193,195,1) 0%, rgba(206,253,45,1) 100%);
+}
+
+
+.bg-danger{
+    background: linear-gradient(146deg, rgba(34,193,195,1) 0%, rgba(206,253,45,1) 100%);
+}
+
+
+.bg-warning{
+    background: linear-gradient(to right,  green,  indigo, violet);
+}
+.btn-secondary{
+    background: linear-gradient(to right,  violet,  indigo, green);
+}
+
+.text-black{
+
+    color: darkslategrey !important;
+}
+
+.resim {
+    width: 100%; /* Resimlerin genişliği, içinde bulundukları divin genişliğine eşit olacak */
+    height: 400px; /* Örnek bir yükseklik */
+    position: relative; /* .resim sınıfına gerek yok */
+}
+
+.resim img {
+    position: absolute; /* Resimlerin sayfa içinde konumlandırılması */
+    max-width: 100%;
+    height: auto;
+}
+
+.resim img:first-child {
+    z-index: 2; /* En önde */
+    width: 300%;
+    top: 5%;
+    left: 30%;
+}
+
+.resim img:nth-child(2) {
+    z-index: 1; /* Ortada */
+    width: 400%;
+    top: 5%; /* İlk resmin altında */
+    left: 30%; /* İlk resmin biraz sağında */
+}
+
+.resim img:last-child {
+    z-index: 3; /* En arkada */
+    width: 350%;
+    top: 5%; /* İlk ve ikinci resmin altında */
+    left: 43%; /* İlk ve ikinci resmin biraz daha sağında */
+}
+
+
+
+
+
+/* XS (çok küçük boyut) ekranlar için */
+@media (max-width: 575.98px) {
+    .app-badge {
+        max-width: 30%; /* Resmin maksimum genişliğini %100 olarak ayarlar */
+        height: auto; /* Yüksekliğin otomatik olarak ayarlanmasını sağlar */
+    }
+}
+/* SM (Küçük boyut) ekranlar için */
+@media (min-width: 576px) {
+    .app-badge {
+        max-width: 40%; /* Resmin maksimum genişliğini %100 olarak ayarlar */
+        height: auto; /* Yüksekliğin otomatik olarak ayarlanmasını sağlar */
+    }
+}
+/* MD (orta boyut) ekranlar için */
+@media (min-width: 768px) {
+    .app-badge {
+        max-width: 50%; /* Resmin maksimum genişliğini %100 olarak ayarlar */
+        height: auto; /* Yüksekliğin otomatik olarak ayarlanmasını sağlar */
+    }
+}
+
+/* lg (buyuk boyut) ekranlar için */
+@media (min-width: 992px) {
+    .app-badge {
+        max-width: 90%; /* Resmin maksimum genişliğini %100 olarak ayarlar */
+        height: auto; /* Yüksekliğin otomatik olarak ayarlanmasını sağlar */
+    }
+}
+/* xl (buyuk boyut) ekranlar için */
+@media (min-width: 1200px) {
+    .app-badge {
+        max-width: 100%; /* Resmin maksimum genişliğini %100 olarak ayarlar */
+        height: auto; /* Yüksekliğin otomatik olarak ayarlanmasını sağlar */
+    }
+}
+
+
+
+
+
+.resim2{
+    position: relative;
+}
+
+.resim2 img { /* resim classının içindeki img yani resimleri sola sıfır ve yukarıya sıfırladık */
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%; /* Resimlerin en fazla konteynerin genişliği kadar genişlemesini sağlar */
+}
+
+.resim2 img:first-child { /* ilk resim classı*/
+    z-index: 1; /* İlk resmi öne çıkarttık */
+    width: 300px; /* Genişlik olarak 300 piksel verdik */
+    height: auto; /* Yüksekliği otomatik olarak ayarla, orijinal oranı koru dedik */
+    /* hafif sola çektik ki altta ufakta olsa ayar istiyordu */
+}
+.resim2 img:last-child { /* İkinci resmi daha geride bıraktık */
+    z-index: 2; /* İkinci resmi daha geride bırakır */
+    width: 300px; /* Genişlik olarak 300 piksel */
+    height: auto; /* Yüksekliği otomatik olarak ayarla, orijinal oranı koru */
+
+}
+.resim2 img:nth-child(3) { /* İkinci resmi daha geride bıraktık */
+    z-index: -1; /* İkinci resmi daha geride bırakır */
+    width: 1000px; /* Genişlik olarak 300 piksel */
+    height: auto; /* Yüksekliği otomatik olarak ayarla, orijinal oranı koru */
+    left: 5px;
+}
+
+.btn-outline-warning{
+    font-size: medium;
+    color: white;
+
+}
+
+
+
+
+.bi-badge-8k,
+.bi-cast,
+.bi-music-player-fill,
+.bi-globe-americas {
+    
+    color: purple;
+}
+
+
